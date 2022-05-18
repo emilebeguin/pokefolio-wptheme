@@ -5,49 +5,33 @@
         <div class="heading heading--middle">
             <h3>My blog</h3>
             <div class="border__bottom"></div>
-            <h1>Same of my latest posts</h1>
+            <h1>See more of my latest posts</h1>
             <p>Stay tuned !</p>
         </div>
         <div class="blog__news">
-            <!-- BLOG 01 -->
-            <div class="blog__block">
-                <div class="blog__image">
-                    <img src="<?php bloginfo('template_directory') ?>/img/news1.jpeg">
+
+            <?php $loop = new WP_Query( array(
+                'post_type' => 'post', // fetch all content type post
+                'order' => 'DESC',
+            ));?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+                <!-- BLOG 01 -->
+                <div class="blog__block">
+                    <div class="blog__image">
+                        <img src="<?php the_post_thumbnail_url() ?>">
+                    </div>
+                    <div class="blog__text">
+                        <h6><?php the_title() ?></h6>
+                        <p><?php the_excerpt() ?></p>
+                        <button class="button button--darkblue"><a href="<?php the_permalink() ?>/#">Read
+                                More</a></button>
+                    </div>
                 </div>
-                <div class="blog__text">
-                    <h6>Title</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper nibh sed tellus consectetur
-                        mattis</p>
-                    <button class="button button--darkblue"><a href="<?php bloginfo('template_directory') ?>/#">Learn
-                            More</a></button>
-                </div>
-            </div>
-            <!-- BLOG 02 -->
-            <div class="blog__block">
-                <div class="blog__image">
-                    <img src="<?php bloginfo('template_directory') ?>/img/news2.jpg">
-                </div>
-                <div class="blog__text">
-                    <h6>Title</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper nibh sed tellus consectetur
-                        mattis</p>
-                    <button class="button button--darkblue"><a href="<?php bloginfo('template_directory') ?>/#">Learn
-                            More</a></button>
-                </div>
-            </div>
-            <!-- BLOG 03 -->
-            <div class="blog__block">
-                <div class="blog__image">
-                    <img src="<?php bloginfo('template_directory') ?>/img/news3.jpeg">
-                </div>
-                <div class="blog__text">
-                    <h6>Title</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper nibh sed tellus consectetur
-                        mattis</p>
-                    <button class="button button--darkblue"><a href="<?php bloginfo('template_directory') ?>/#">Learn
-                            More</a></button>
-                </div>
-            </div>
+
+            <?php endwhile;
+            wp_reset_query(); ?>
+
         </div>
     </div>
 </section>
