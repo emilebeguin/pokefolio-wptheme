@@ -8,12 +8,42 @@ add_theme_support('post-thumbnails');
 add_theme_support('custom-background');
 add_theme_support('custom-header');
 
-// active la page fonctions dans ACF
-if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page();
-	
+// active la page options dans Custom Fields Suite
+// Doc : https://github.com/TomodomoCo/cfs-options-pages
+function my_custom_options_pages( $pages ) {
+	$my_pages = array(
+		'Clients',
+		'Test',
+	);
+
+	return array_merge( $pages, $my_pages );
 }
+add_filter( 'cfs_options_pages', 'my_custom_options_pages' );
+
+ /**
+  * @todo Filter value for each column
+  * @global type $post
+  * @param type $column
+  * @param type $post_id
+  */
+  function cpt_column($column)
+  {
+	  global $post;
+	  switch ($column) {
+		  case 'cat_id':
+			  echo CFS()->get("category_id", $post->ID);
+			  break;
+		  case 'source':
+			  $source = CFS()->get("source", $post->ID);
+			  echo $source[0];
+			  break;
+		  case 'post_status':
+			  echo $post->post_status;
+			  break;
+		  default:
+			  break;
+	  }
+  }
 
 /*******************************************************************
                               WIDGETS
@@ -87,7 +117,7 @@ add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 // add_image_size('listings', 1110, 558, true);
 
 /*******************************************************************
-                         CUSTOM POST SIZES
+                         CUSTOM POST TYPES
 ********************************************************************/
 /*
 Custom post types (devraient pouvoir être activés/désactivés par des
@@ -141,7 +171,7 @@ function create_experience_cpt() {
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
-		'menu_position' => 5,
+		'menu_position' => 20, // en-dessous des pages
 		'show_in_admin_bar' => true,
 		'show_in_nav_menus' => true,
 		'can_export' => true,
@@ -193,13 +223,13 @@ function create_service_cpt() {
 		'label' => __( 'Service', 'textdomain' ),
 		'description' => __( 'Consultancy, deliverables and products that you can provide to a potential customer.', 'textdomain' ),
 		'labels' => $labels,
-		'menu_icon' => '',
+		'menu_icon' => 'dashicons-cart',
 		'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
 		'taxonomies' => array(),
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
-		'menu_position' => 5,
+		'menu_position' => 20, // en-dessous des pages
 		'show_in_admin_bar' => true,
 		'show_in_nav_menus' => true,
 		'can_export' => true,
@@ -257,7 +287,7 @@ function create_skill_cpt() {
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
-		'menu_position' => 5,
+		'menu_position' => 20, // en-dessous des pages
 		'show_in_admin_bar' => true,
 		'show_in_nav_menus' => true,
 		'can_export' => true,
@@ -315,7 +345,7 @@ function create_testimonial_cpt() {
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
-		'menu_position' => 5,
+		'menu_position' => 20, // en-dessous des pages
 		'show_in_admin_bar' => true,
 		'show_in_nav_menus' => true,
 		'can_export' => true,
@@ -373,7 +403,7 @@ function create_work_cpt() {
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
-		'menu_position' => 5,
+		'menu_position' => 20, // en-dessous des pages
 		'show_in_admin_bar' => true,
 		'show_in_nav_menus' => true,
 		'can_export' => true,
@@ -388,3 +418,64 @@ function create_work_cpt() {
 
 }
 add_action( 'init', 'create_work_cpt', 0 );
+
+
+/*******************************************************************
+                       BUILT-IN PAGE CREATION
+********************************************************************/
+/* 
+Crée des pages déjà présentes au chargement du thème, avec un
+contenu par défaut.
+Notes utiles :
+- La page est initialisée à l'état de BROUILLON.
+- Si la page est mise à la corbeille, elle disparaît ; mais pour qu'elle
+soit régénérée dans la liste des pages, il faut la supprimer de façon
+permanente ('delete permanently').
+*/ 
+
+// PAGE CONTACT
+function create_page_contact() {
+	if ( get_page_by_title( 'contact' ) == null ) {
+		$wordpress_page = array(
+			'post_title'    => 'Contact',
+			'post_content'  => 'Ceci est un peu de contenu pour la page contact',
+			'post_status'   => 'draft',
+			'post_author'   => 1,
+			'post_type' => 'page'
+		);
+		wp_insert_post( $wordpress_page );
+	}
+}
+add_action('wp_loaded', 'create_page_contact', 0);
+
+// PAGE SERVICES
+function create_page_services() {
+	if ( get_page_by_title( 'services' ) == null ) {
+		$wordpress_page = array(
+			'post_title'    => 'Services',
+			'post_content'  => 'Ceci est un peu de contenu pour la page Services',
+			'post_status'   => 'draft',
+			'post_author'   => 1,
+			'post_type' => 'page'
+		);
+		wp_insert_post( $wordpress_page );
+	}
+}
+add_action('wp_loaded', 'create_page_services', 0);
+
+// PAGE ABOUT
+// PAGE SERVICES
+function create_page_about() {
+	if ( get_page_by_title( 'about' ) == null ) {
+		$wordpress_page = array(
+			'post_title'    => 'About',
+			'post_content'  => 'Ceci est un peu de contenu pour la page About',
+			'post_status'   => 'draft',
+			'post_author'   => 1,
+			'post_type' => 'page'
+		);
+		wp_insert_post( $wordpress_page );
+	}
+}
+add_action('wp_loaded', 'create_page_about', 0);
+?>
