@@ -13,6 +13,7 @@
         if ( is_page('contact') ): echo '-contact'; endif;
         if ( is_page('services') ): echo '-services'; endif;
         if ( is_page('works') ): echo '-works'; endif;
+        if ( is_page('about') ): echo '-about'; endif;
     };
     if ( is_home() )  : echo 'home';  // home
     endif;
