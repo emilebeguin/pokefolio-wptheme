@@ -1,0 +1,15 @@
+<?php
+  get_template_part('parts/head');
+  get_template_part('parts/shared/init');
+  get_template_part('parts/home/hero');
+  get_template_part('parts/home/about-me');
+  get_template_part('parts/home/experiences');
+  get_template_part('parts/home/skills');
+  get_template_part('parts/home/services');
+  get_template_part('parts/home/works');
+  get_template_part('parts/home/feedback');
+  get_template_part('parts/home/clients');
+  get_template_part('parts/shared/talk');
+  get_template_part('parts/home/blog');
+  get_template_part('parts/footer')
+?>
