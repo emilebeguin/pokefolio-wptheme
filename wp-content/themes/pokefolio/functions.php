@@ -1,5 +1,15 @@
 <?php
 /*******************************************************************
+                         PLUGIN INSTALLATION
+********************************************************************/
+/* 
+
+*/ 
+
+require_once get_template_directory() . '/activation/TGM-Plugin-Activation-2.6.1/recommended-plugins.php';
+
+
+/*******************************************************************
                             CUSTOMIZATION
 ********************************************************************/
 
@@ -419,7 +429,6 @@ function create_work_cpt() {
 }
 add_action( 'init', 'create_work_cpt', 0 );
 
-
 /*******************************************************************
                        BUILT-IN PAGE CREATION
 ********************************************************************/
@@ -433,49 +442,13 @@ soit régénérée dans la liste des pages, il faut la supprimer de façon
 permanente ('delete permanently').
 */ 
 
-// PAGE CONTACT
-function create_page_contact() {
-	if ( get_page_by_title( 'contact' ) == null ) {
-		$wordpress_page = array(
-			'post_title'    => 'Contact',
-			'post_content'  => 'Ceci est un peu de contenu pour la page contact',
-			'post_status'   => 'draft',
-			'post_author'   => 1,
-			'post_type' => 'page'
-		);
-		wp_insert_post( $wordpress_page );
-	}
-}
-add_action('wp_loaded', 'create_page_contact', 0);
+require_once get_template_directory() . '/activation/built-in-contents.php';
 
-// PAGE SERVICES
-function create_page_services() {
-	if ( get_page_by_title( 'services' ) == null ) {
-		$wordpress_page = array(
-			'post_title'    => 'Services',
-			'post_content'  => 'Ceci est un peu de contenu pour la page Services',
-			'post_status'   => 'draft',
-			'post_author'   => 1,
-			'post_type' => 'page'
-		);
-		wp_insert_post( $wordpress_page );
-	}
-}
-add_action('wp_loaded', 'create_page_services', 0);
+/*******************************************************************
+                           THEME SETTINGS
+********************************************************************/
+/*
 
-// PAGE ABOUT
-// PAGE SERVICES
-function create_page_about() {
-	if ( get_page_by_title( 'about' ) == null ) {
-		$wordpress_page = array(
-			'post_title'    => 'About',
-			'post_content'  => 'Ceci est un peu de contenu pour la page About',
-			'post_status'   => 'draft',
-			'post_author'   => 1,
-			'post_type' => 'page'
-		);
-		wp_insert_post( $wordpress_page );
-	}
-}
-add_action('wp_loaded', 'create_page_about', 0);
+*/
+require(get_template_directory() . '/settings/theme_settings.php');
 ?>
