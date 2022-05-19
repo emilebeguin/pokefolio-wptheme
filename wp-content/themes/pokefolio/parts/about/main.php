@@ -188,7 +188,7 @@ echo CFS()->get( 'quality_6' ); ?></h5>
           <div class="border__bottom"></div>
           <h1>Take your business to new heights</h1>
           <p>Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut Enim ad minim. Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut Enim ad minim.</p>
-          <button class="button button--pink"><a href="contact.html">Contact me</a></button>
+          <button class="button button--pink"><a href="<?php bloginfo( 'url' ) ?>/contact">Contact me</a></button>
         </div>
       </div>
     </div>
