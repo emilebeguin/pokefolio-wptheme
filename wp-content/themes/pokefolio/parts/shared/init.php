@@ -7,6 +7,7 @@
         if ( is_singular('skill') ): echo '-skill'; endif;
         if ( is_singular('testimonial') ): echo '-testimonial'; endif;
         if ( is_singular('work') ): echo '-work'; endif;
+        if ( is_singular('post') ): echo '-blog'; endif;
     };
     if ( is_page() ) {
         echo 'page';  // page
