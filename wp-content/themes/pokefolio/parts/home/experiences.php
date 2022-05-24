@@ -1,5 +1,5 @@
 <!-- SECTION EXPERIENCES -->
-<section class="experiences">
+<section class="experiences --waterbg">
     <div class="blue waves"></div>
     <div class="wrapper">
         <div class="heading">
@@ -8,7 +8,7 @@
         </div>
         <div class="experiences__all">
             <!-- EXP 01 -->
-            <div class="exp">
+            <div data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="exp">
                 <!-- Colonne 001 -->
                 <div class="exp__logo">
                     <h5>Jan 2018 - Present</h5>
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <!-- EXP 02 -->
-            <div class="exp">
+            <div data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2600"  class="exp">
                 <!-- Colonne 001 -->
                 <div class="exp__logo">
                     <h5>Jan 2018 - Present</h5>
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <!-- EXP 03 -->
-            <div class="exp">
+            <div data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2600" class="exp">
                 <!-- Colonne 001 -->
                 <div class="exp__logo">
                     <h5>Jan 2018 - Present</h5>

@@ -1,4 +1,4 @@
-<div class="work">
+<section class="work --darkbg">
     <div class="wrapper">
         <div class="heading heading--white">
             <h3>Get Inspired</h3>
@@ -7,7 +7,7 @@
             <p>Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut Enim ad minim.</p>
         </div>
-        <div class="work__image">
+        <div data-aos="fade-up" data-aos-duration="2800" class="work__image">
             <!-- WORK SINGLE 01 -->
             <div class="work__single">
                 <div class="singlework__text">
@@ -41,6 +41,6 @@
                 <img src="<?php bloginfo('template_directory') ?>/img/work4.jpeg">
             </div>
         </div>
-        <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/#">Learn More</a></button>
+        <button data-aos="fade-up" data-aos-duration="2600" class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/#">Learn More</a></button>
     </div>
-</div>
+</section>

@@ -1,5 +1,5 @@
 <!-- SECTION BLOG -->
-<section class="blog">
+<section class="blog --airbg">
     <div class="purple waves"></div>
     <div class="wrapper">
         <div class="heading heading--middle">
@@ -8,7 +8,7 @@
             <h1>See more of my latest posts</h1>
             <p>Stay tuned !</p>
         </div>
-        <div class="blog__news">
+        <div data-aos="fade-up" data-aos-duration="2600" class="blog__news">
 
             <?php $loop = new WP_Query( array(
                 'post_type' => 'post', // fetch all content type post
@@ -20,11 +20,16 @@
                 <div class="blog__block">
                     <div class="blog__image">
                         <img src="<?php the_post_thumbnail_url() ?>">
+                        <div class="blog__date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <!-- A DYNAMISER -->
+                            <div>10/05/2022</div>
+                        </div>
                     </div>
                     <div class="blog__text">
                         <h6><?php the_title() ?></h6>
                         <p><?php the_excerpt() ?></p>
-                        <button class="button button--darkblue"><a href="<?php the_permalink() ?>/#">Read
+                        <button class="button button--darkblue"><a href="<?php the_permalink() ?>">Read
                                 More</a></button>
                     </div>
                 </div>
