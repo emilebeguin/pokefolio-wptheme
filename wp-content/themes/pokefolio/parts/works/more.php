@@ -1,5 +1,5 @@
 <!-- SECTION BROWSE MORE -->
-<section class="browse-more">
+<section class="browse-more --waterbg">
     <div class="wrapper">
       <div class="browse-more-inside">
         
@@ -9,7 +9,7 @@
           <h1>See more cool projects</h1>
         </div>
         <div class="see-more df">
-          <div class="article-1">
+          <div data-aos="zoom-in-right" data-aos-duration="2600" class="article-1">
             <a href="#">
               <img src="<?php bloginfo( 'template_directory' ) ?>/img/work2.jpeg" alt="">
             </a>
@@ -23,7 +23,7 @@
               </p>
             </div>
           </div>
-          <div class="article-2">
+          <div data-aos="zoom-in-left" data-aos-duration="2600" class="article-2">
             <a href="#">
               <img src="<?php bloginfo( 'template_directory' ) ?>/img/work3.jpeg" alt="">
             </a>

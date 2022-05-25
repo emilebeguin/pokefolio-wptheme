@@ -2,22 +2,13 @@
 <!-- HEADER HERE -->
 <header style="background-image: url(<?php the_post_thumbnail_url(  ) ?>);">
     <!-- NAVIGATION -->
-    <nav class="nav">
-      <a href="index.html" class="nav__logo"><img src="img/logosimple-lightbg.png"></a>
-      <div class="nav__menu">
-        <a href="index.html">Accueil</a>
-        <a href="services.html">Services</a>
-        <a href="#">Projets</a>
-        <a href="blog.html">Blog</a>
-        <a href="about.html">À propos</a>
-      </div>
-    </nav>
+    <?php get_template_part('parts/shared/topnav') ?>
     
     <!-- MARKER -->
     <div class="marker">
       <!-- TITLE OF THE ARTICLE -->
       <div class="__text">
-        <?php the_title(  ) ?>
+        <h1><?php the_title(  ) ?></h1>
       </div>
       
       <!-- DATE -->

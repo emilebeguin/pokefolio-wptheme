@@ -8,7 +8,8 @@
     <?php while ( $loop->have_posts() ) : $loop->the_post();?>
         <!-- SECTION MARKETING -->
         <section class="<?php
-            // la classe change en cas de service pair ou impair
+            // /!\ la classe change en cas de service pair ou impair :
+            // À DYNAMISER !
             $serviceDisplayNumber++;
             if($serviceDisplayNumber % 2){ echo 'marketing section-even';}
             else{ echo 'creative section-odd';}
@@ -19,7 +20,7 @@
                     <div class="block-txtimg__image">
                         <img alt="Grow and Stand Out" src="img/service1.jpeg">
                     </div>
-                    <div class="block-txtimg__text">
+                    <div data-aos="zoom-out-right" data-aos-duration="2600" class="block-txtimg__text">
                         <div class="heading">
                             <h3>My Services</h3>
                             <h1>Marketing</h1>

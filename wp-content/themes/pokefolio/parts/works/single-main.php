@@ -1,5 +1,5 @@
 <!-- SECTION SINGLE WORK -->
-<section class="single-work">
+<section class="single-work --darkbg">
     
     <div class="single-work-inside">
       
@@ -18,13 +18,13 @@
               </div>
               <p>Services</p>
               <div class="exp__tag">
-                <div class="tag"><a href="#">Marketing</a></div>
-                <div class="tag"><a href="#">DSLR</a></div>
-                <div class="tag"><a href="#">Creative photography</a></div>
+                <div data-aos="fade-down-left" data-aos-duration="2200" class="tag"><a href="#">Marketing</a></div>
+                <div data-aos="fade-down-left" data-aos-duration="2200" class="tag"><a href="#">DSLR</a></div>
+                <div data-aos="fade-down-left" data-aos-duration="2200" class="tag"><a href="#">Creative photography</a></div>
               </div>
               <p>Year</p>
               <div class="exp__tag">
-                <div class="tag"><a href="#">2019</a></div>
+                <div data-aos="fade-down-left" data-aos-duration="2200" class="tag"><a href="#">2019</a></div>
               </div>
             </div>
             <div class="block-txt">

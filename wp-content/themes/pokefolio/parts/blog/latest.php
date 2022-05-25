@@ -14,15 +14,15 @@
 
 
     <?php
-$loop = new WP_Query( array( 
-      'post_type' => 'post', // Va rechercher le type de contenu “job”
-      'posts_per_page' => -1, // Affiche tout sans limite 
-      'offset' => 0, // Commence la boucle après avoir "passé" les 3 premiers
-      'orderby' => 'date', // Ordonne par le nom de l'élément
-      'order' => 'ASC', // Chronologique ou pas (DESC)
+        $loop = new WP_Query( array( 
+            'post_type' => 'post', // Va rechercher le type de contenu “job”
+            'posts_per_page' => -1, // Affiche tout sans limite 
+            'offset' => 0, // Commence la boucle après avoir "passé" les 3 premiers
+            'orderby' => 'date', // Ordonne par le nom de l'élément
+            'order' => 'ASC', // Chronologique ou pas (DESC)
         ));?>
-<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-<!-- Ce qui doit être "bouclé" -->
+        <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        <!-- Ce qui doit être "bouclé" -->
 
 
         <div class="blog__block">
@@ -36,11 +36,9 @@ $loop = new WP_Query( array(
             </div>
         </div>
 
-
-
         <?php endwhile;
-wp_reset_query();
-?>
+            wp_reset_query();
+        ?>
         
     </div>
 </section>
