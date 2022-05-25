@@ -20,5 +20,5 @@
     if ( is_home() )  : echo 'page-home';  // home
     endif;
 
-    echo ' ' . get_theme_mod('color_settings');
+    echo ' ' . get_theme_mod('color_settings', 'theme-color--carapuce_blue');
 ?>">

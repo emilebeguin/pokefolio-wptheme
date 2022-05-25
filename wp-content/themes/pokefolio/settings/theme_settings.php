@@ -6,7 +6,7 @@ add_action('customize_register', function($customizer){
         'theme_color',
         array(
             'title' => 'Couleurs Pokefolio',
-            'description' => '',
+            'description' => 'Changez vous-même la couleur du thème !',
         )
     );
     $customizer->add_setting(
