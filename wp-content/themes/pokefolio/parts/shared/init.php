@@ -19,6 +19,9 @@
     };
     if ( is_home() )  : echo 'page-home';  // home
     endif;
-
+    // couleurs du thème
     echo ' ' . get_theme_mod('color_settings', 'theme-color--carapuce_blue');
+
+    // classe pour le fond personnalisé
+    echo ' ' . 'custom-background'
 ?>">

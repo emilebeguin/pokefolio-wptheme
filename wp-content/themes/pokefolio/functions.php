@@ -55,6 +55,14 @@ add_filter( 'cfs_options_pages', 'my_custom_options_pages' );
 	  }
   }
 
+/* FOND PERSONNALISABLE DE LA SECTION HERO */
+add_theme_support( 'custom-background', array(
+	'default-color' => '0000ff',
+	'default-size' => 'cover',
+	'default-image' => get_template_directory_uri() . '/img/bg-home.png',
+	'default-repeat' => 'no-repeat',
+));
+
 /*******************************************************************
                               WIDGETS
 ********************************************************************/

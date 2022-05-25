@@ -2,14 +2,15 @@
     <a href="<?php bloginfo('template_directory') ?>" class="nav__logo">
         <img src="<?php bloginfo('template_directory') ?>/img/logosimple-lightbg.png">
     </a>
-    <div class="nav__menu">
-        <a href="<?php bloginfo('template_directory') ?>">Accueil</a>
-        <a href="<?php bloginfo('template_directory') ?>/services.html">Services</a>
-        <a href="<?php bloginfo('template_directory') ?>/works.html">Projets</a>
-        <a href="<?php bloginfo('template_directory') ?>/blog.html">Blog</a>
-        <a href="<?php bloginfo('template_directory') ?>/about.html">À propos</a>
-        <a href="<?php bloginfo('template_directory') ?>/contact.html">Contact</a>
-    </div>
+    <?php wp_nav_menu([
+        'menu' =>  'Header Menu',
+        'container' => false,
+        'container_class' => 'hello',
+        'menu_class' =>  'nav__menu',
+        // 'items_wrap' =>  '<ul id="%1$s" class="%2$s nav navbar-nav mr-auto">%3$s</ul>',
+        // 'add_li_class'  => 'nav-item',
+        // 'link_class'   => 'nav-link'
+    ]); ?>
 
     <!-- BURGER MENU -->
     <div class="burger">
