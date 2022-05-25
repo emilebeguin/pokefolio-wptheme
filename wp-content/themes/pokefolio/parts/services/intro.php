@@ -1,8 +1,8 @@
 <!-- SECTION GROW & STAND OUT -->
-<section class="grow-and-standout">
+<section class="grow-and-standout --waterbg">
     <div class="wide wide--inverse">
 
-        <div class="block-txtimg__image">
+        <div data-aos="fade-left" data-aos-duration="2600" class="block-txtimg__image">
             <img alt="Grow and Stand Out" src="<?php bloginfo('template_directory') ?>/img/stand-out2.jpg">
         </div>
 
