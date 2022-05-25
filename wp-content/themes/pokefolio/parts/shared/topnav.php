@@ -1,6 +1,6 @@
-<nav class="nav  --airbg">
+<nav class="nav --airbg">
     <a href="<?php bloginfo('template_directory') ?>" class="nav__logo">
-        <img src="<?php bloginfo('template_directory') ?>/img/logosimple-darkbg.png">
+        <img src="<?php bloginfo('template_directory') ?>/img/logosimple-lightbg.png">
     </a>
     <div class="nav__menu">
         <a href="<?php bloginfo('template_directory') ?>">Accueil</a>

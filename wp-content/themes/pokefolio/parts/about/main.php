@@ -4,7 +4,7 @@
     
     
     <!-- TOP OF THE PAGE -->
-    <div class="toptop --graybg">
+    <section class="toptop --airbg --overflow">
       <div class="top wrapper ">
         
         <div class="__txts --respmargin">
@@ -13,8 +13,9 @@
             <!-- TITLE -->
             <h3>About Me</h3>
             <!-- NAME -->
-            <h2 class="--bigtitle"><?php
-echo CFS()->get( 'introduction_phrase' ); ?></h2>
+            <h2 data-aos="fade-up" data-aos-duration="2000" class="--bigtitle">
+              <?php echo CFS()->get( 'introduction_phrase' ); ?>
+            </h2>
           </div>
           
           <!-- RIGHT PART -->
@@ -28,7 +29,7 @@ echo CFS()->get( 'introduction_phrase' ); ?></h2>
         <!-- PICTURE -->
         <div class="__pic --toppad --respmargin">
           <!-- THE CARD -->
-          <div class="__piccontainer about__image">
+          <div data-aos="fade-up" data-aos-duration="2800" class="__piccontainer about__image">
             <!-- THE IMG -->
             <img alt="about" src="<?php bloginfo( 'template_directory' ) ?>/img/about-me.jpg" class="--largerimg">
             
@@ -37,13 +38,13 @@ echo CFS()->get( 'introduction_phrase' ); ?></h2>
         <!-- END OF PICTURE -->
         
       </div>
-    </div>
+    </section>
     
     <!-- END OF TOP -->
     
     
     <!-- CARDS SECTION -->
-    <div class="cards  --toppad --botpad --bluebg">
+    <section class="cards --waterbg">
       <!-- TITLES -->
       <div class="__titles wrapper --toppad">
         <!-- PRE TITLE -->
@@ -54,10 +55,10 @@ echo CFS()->get( 'introduction_phrase' ); ?></h2>
       
       
       <!-- CARDS -->
-      <div class="__cards --toppad wrapper">
+      <div class="__cards --toppad  --botpad wrapper">
         
         <!-- SINGLE CARD (x6) -->
-        <div class="__singlecard">
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
           <!-- ICON -->
           <div class="__icon --lilpadtop">
             <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
@@ -65,8 +66,7 @@ echo CFS()->get( 'introduction_phrase' ); ?></h2>
           
           <!-- TITLE -->
           <div class="__title">
-            <h5 class="--txtcenter"><?php
-echo CFS()->get( 'quality_1' ); ?></h5>
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_1' ); ?></h5>
           </div>
           
           <!-- TEXT -->
@@ -77,7 +77,7 @@ echo CFS()->get( 'quality_1' ); ?></h5>
         <!-- END OF SINGLE CARD -->
         
         <!-- SINGLE CARD (x6) -->
-        <div class="__singlecard">
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
           <!-- ICON -->
           <div class="__icon --lilpadtop">
             <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
@@ -85,8 +85,7 @@ echo CFS()->get( 'quality_1' ); ?></h5>
           
           <!-- TITLE -->
           <div class="__title">
-            <h5 class="--txtcenter"><?php
-echo CFS()->get( 'quality_2' ); ?></h5>
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_2' ); ?></h5>
           </div>
           
           <!-- TEXT -->
@@ -97,7 +96,7 @@ echo CFS()->get( 'quality_2' ); ?></h5>
         <!-- END OF SINGLE CARD -->
         
         <!-- SINGLE CARD (x6) -->
-        <div class="__singlecard">
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
           <!-- ICON -->
           <div class="__icon --lilpadtop">
             <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
@@ -105,8 +104,7 @@ echo CFS()->get( 'quality_2' ); ?></h5>
           
           <!-- TITLE -->
           <div class="__title">
-            <h5 class="--txtcenter"><?php
-echo CFS()->get( 'quality_3' ); ?></h5>
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_3' ); ?></h5>
           </div>
           
           <!-- TEXT -->
@@ -117,7 +115,7 @@ echo CFS()->get( 'quality_3' ); ?></h5>
         <!-- END OF SINGLE CARD -->
         
         <!-- SINGLE CARD (x6) -->
-        <div class="__singlecard">
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
           <!-- ICON -->
           <div class="__icon --lilpadtop">
             <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
@@ -125,8 +123,7 @@ echo CFS()->get( 'quality_3' ); ?></h5>
           
           <!-- TITLE -->
           <div class="__title">
-            <h5 class="--txtcenter"><?php
-echo CFS()->get( 'quality_4' ); ?></h5>
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_4' ); ?></h5>
           </div>
           
           <!-- TEXT -->
@@ -137,7 +134,7 @@ echo CFS()->get( 'quality_4' ); ?></h5>
         <!-- END OF SINGLE CARD -->
         
         <!-- SINGLE CARD (x6) -->
-        <div class="__singlecard">
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
           <!-- ICON -->
           <div class="__icon --lilpadtop">
             <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
@@ -145,8 +142,7 @@ echo CFS()->get( 'quality_4' ); ?></h5>
           
           <!-- TITLE -->
           <div class="__title">
-            <h5 class="--txtcenter"><?php
-echo CFS()->get( 'quality_5' ); ?></h5>
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_5' ); ?></h5>
           </div>
           
           <!-- TEXT -->
@@ -157,7 +153,7 @@ echo CFS()->get( 'quality_5' ); ?></h5>
         <!-- END OF SINGLE CARD -->
         
         <!-- SINGLE CARD (x6) -->
-        <div class="__singlecard">
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
           <!-- ICON -->
           <div class="__icon --lilpadtop">
             <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
@@ -165,8 +161,7 @@ echo CFS()->get( 'quality_5' ); ?></h5>
           
           <!-- TITLE -->
           <div class="__title">
-            <h5 class="--txtcenter"><?php
-echo CFS()->get( 'quality_6' ); ?></h5>
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_6' ); ?></h5>
           </div>
           
           <!-- TEXT -->
@@ -176,24 +171,25 @@ echo CFS()->get( 'quality_6' ); ?></h5>
         </div>
         <!-- END OF SINGLE CARD -->
       </div>
-    </div>
+    </section>
     <!-- END OF CARDS -->
     
     
     <!-- CTA SECTION -->
-    <div class="talk --bgreplacer">
-      <div class="overlay --overlayfix">
-        <div class="heading heading--white">
-          <h3>Let's work together</h3>
-          <div class="border__bottom"></div>
-          <h1>Take your business to new heights</h1>
-          <p>Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut Enim ad minim. Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut Enim ad minim.</p>
-          <button class="button button--pink"><a href="<?php bloginfo( 'url' ) ?>/contact">Contact me</a></button>
+    <section class="--darkbg bg">
+      <div class="talk --bgreplacer">
+        <div class="overlay --overlayfix">
+          <div class="heading heading--white">
+            <h3>Let's work together</h3>
+            <div class="border__bottom"></div>
+            <h1>Take your business to new heights</h1>
+            <p>Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut Enim ad minim. Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut Enim ad minim.</p>
+            <button data-aos="fade-up" data-aos-duration="2600" class="button button--pink"><a href="<?php bloginfo( 'url' ) ?>/contact">Contact me</a></button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- END OF CTA -->
-    
     
   </main>
   <!-- END OF MAIN -->
