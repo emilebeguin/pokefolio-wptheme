@@ -4,5 +4,5 @@
     get_template_part('parts/shared/topnav');
     // spécifités de la page about ici
     get_template_part('parts/about/main');
-    get_template_part('parts/footer');
+    get_template_part('parts/shared/footer');
 ?>

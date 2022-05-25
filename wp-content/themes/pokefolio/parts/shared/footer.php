@@ -38,8 +38,14 @@
     <div class="footer">
       <div class="footer--title">Join my newsletter</div>
       <p>Lorem Impsum dolor sit amet, consectetur adipiscing elit, sed do eludsomod tempor, incididunt.</p>
-      <div class="footer--search">tiffany.milan@email.com</div>
-      <button class="button button--pink"><a href="<?php bloginfo('template_directory') ?>/#">Subscribe</a></button>
+      <form action="get">
+        <div class="footer--search">
+          <div class="subscribe">
+            <input type="text" name="subscribe-mail" id="subscribe-mail" placeholder="tiffany.milan@email.com">
+          </div>
+        </div>
+        <button data-aos="fade-up" data-aos-duration="2600" class="button button--pink"><a href="#">Subscribe</a></button>
+      </form>
     </div>    
   </div>
   <div class="footer__pink">
@@ -52,8 +58,4 @@
     </div>
   </div>
 </footer>
-<script src="<?php bloginfo('template_directory') ?>/js/main.min.js"></script>
-<script src="<?php bloginfo('template_directory') ?>/js/burger.min.js"></script>
-<?php wp_footer() ?>
-</body>
-</html>
+<?php get_template_part('parts/shared/scripts') ?>

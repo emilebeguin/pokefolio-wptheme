@@ -1,8 +1,9 @@
-<section class="our-services">
+<section class="our-services --waterbg">
     <div class="blue waves"></div>
     <div class="wrapper">
         <div class="services">
-            <div class="services__marketing">
+            <!-- PALIER ANIMATION 2600 -->
+            <div data-aos="fade-up" data-aos-duration="2600" class="services__marketing">
                 <!-- MARKETING 01 -->
                 <div class="marketing__block">
                     <img class="marketing__image" src="<?php bloginfo('template_directory') ?>/img/service1.jpeg">
@@ -12,7 +13,7 @@
                     </div>
                     <p>Cras vitae magna in lorem ullamcorper aliquam nec ut turpis. Vivamus dignissim neque quis ex
                         sagittis efficitur. Mauris nisl neque, molestie in consequat sodales, finibus non erat.</p>
-                    <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/#">Learn
+                    <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/services">Learn
                             More</a></button>
                 </div>
                 <!-- MARKETING 02 -->
@@ -24,7 +25,7 @@
                     </div>
                     <p>Cras vitae magna in lorem ullamcorper aliquam nec ut turpis. Vivamus dignissim neque quis ex
                         sagittis efficitur. Mauris nisl neque, molestie in consequat sodales, finibus non erat.</p>
-                    <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/#">Learn
+                    <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/services">Learn
                             More</a></button>
                 </div>
                 <!-- MARKETING 03 -->
@@ -36,7 +37,7 @@
                     </div>
                     <p>Cras vitae magna in lorem ullamcorper aliquam nec ut turpis. Vivamus dignissim neque quis ex
                         sagittis efficitur. Mauris nisl neque, molestie in consequat sodales, finibus non erat.</p>
-                    <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/#">Learn
+                    <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/services">Learn
                             More</a></button>
                 </div>
                 <!-- MARKETING 04 -->
@@ -48,8 +49,7 @@
                     </div>
                     <p>Cras vitae magna in lorem ullamcorper aliquam nec ut turpis. Vivamus dignissim neque quis ex
                         sagittis efficitur. Mauris nisl neque, molestie in consequat sodales, finibus non erat.</p>
-                    <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/#">Learn
-                            More</a></button>
+                    <button data-aos="fade-up" data-aos-duration="2600" class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/services">Learn More</a></button>
                 </div>
             </div>
             <div class="about__text">
@@ -64,7 +64,7 @@
                 <p>Phasellus varius malesuada justo non iaculis. Interdum et malesuada fames ac ante ipsum primis in
                     faucibus. Suspendisse ut quam sed metus convallis convallis ut in justo. Vestibulum ut augue
                     rhoncus, mattis odio vel, pharetra nisl.</p>
-                <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/#">All
+                <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/services">All
                         Services</a></button>
             </div>
         </div>

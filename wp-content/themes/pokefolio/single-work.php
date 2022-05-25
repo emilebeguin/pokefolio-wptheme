@@ -5,5 +5,5 @@
     get_template_part('parts/works/single-main');
     get_template_part('parts/works/more');
     // catégories à ajouter ici
-    get_template_part('parts/footer');
+    get_template_part('parts/shared/footer');
 ?>

@@ -1,5 +1,5 @@
 <body class="<?php
-    // css en fonction du type de contenu
+    // css en fonction du type de conten
     if ( is_single() ) {
         echo 'single'; // article ou custom post
         if ( is_singular('experience') ): echo '-experience'; endif;
@@ -17,7 +17,7 @@
         if ( is_page('works') ): echo '-works'; endif;
         if ( is_page('about') ): echo '-about'; endif;
     };
-    if ( is_home() )  : echo 'home';  // home
+    if ( is_home() )  : echo 'page-home';  // home
     endif;
 
     echo ' ' . get_theme_mod('color_settings');

@@ -4,5 +4,5 @@
     get_template_part('parts/shared/topnav');
     get_template_part('parts/works/main');
     // catégories à ajouter ici
-    get_template_part('parts/footer');
+    get_template_part('parts/shared/footer');
 ?>

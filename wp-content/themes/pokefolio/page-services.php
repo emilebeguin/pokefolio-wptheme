@@ -6,5 +6,5 @@
     get_template_part('parts/services/intro');
     get_template_part('parts/services/services-list');
     get_template_part('parts/shared/talk');
-    get_template_part('parts/footer');
+    get_template_part('parts/shared/footer');
 ?>
