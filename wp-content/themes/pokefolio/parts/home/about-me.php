@@ -8,7 +8,7 @@
             <div class="about__text">
                 <h3>About Me</h3>
                 <h1><?php echo CFS()->get( 'about_introduction', CFS()->options->page( 'Options' ) ); ?></h1>
-                <?php echo CFS()->get( 'about_presentation', CFS()->options->page( 'Options' ) ); ?>
+                <?php echo CFS()->get( 'about_presentation', CFS()->options->page( 'Options' ) ); ?> <br>
                 <button data-aos="fade-up" data-aos-duration="2600" class="button button--pink"><a href="<?php bloginfo('template_directory') ?>/about">Learn
                         More</a></button>
             </div>

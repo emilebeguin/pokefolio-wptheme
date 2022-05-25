@@ -4,53 +4,43 @@
         <div class="services">
             <!-- PALIER ANIMATION 2600 -->
             <div data-aos="fade-up" data-aos-duration="2600" class="services__marketing">
+
+
+
+
+
+            <?php $loop = new WP_Query( array( 
+            'post_type' => 'service', // Va rechercher le type de contenu “job”
+            'posts_per_page' => 4, // Affiche tout sans limite 
+            'offset' => 0, // Commence la boucle après avoir "passé" les 3 premiers
+            'orderby' => 'date', // Ordonne par le nom de l'élément
+            'order' => 'ASC', // Chronologique ou pas (DESC)
+            ));?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+
                 <!-- MARKETING 01 -->
                 <div class="marketing__block">
-                    <img class="marketing__image" src="<?php bloginfo('template_directory') ?>/img/service1.jpeg">
+                    <img class="marketing__image" src="<?php the_post_thumbnail_url(  ) ?>">
                     <div class="marketing__title">
-                        <h6>Markerting</h6>
+                        <h6><?php the_title(  ) ?></h6>
                         <img src="<?php bloginfo('template_directory') ?>/img/check.png">
                     </div>
-                    <p>Cras vitae magna in lorem ullamcorper aliquam nec ut turpis. Vivamus dignissim neque quis ex
-                        sagittis efficitur. Mauris nisl neque, molestie in consequat sodales, finibus non erat.</p>
+                    <p><?php the_excerpt(  ) ?></p>
                     <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/services">Learn
                             More</a></button>
                 </div>
-                <!-- MARKETING 02 -->
-                <div class="marketing__block">
-                    <img class="marketing__image" src="<?php bloginfo('template_directory') ?>/img/service2.jpeg">
-                    <div class="marketing__title">
-                        <h6>Markerting</h6>
-                        <img src="<?php bloginfo('template_directory') ?>/img/check.png">
-                    </div>
-                    <p>Cras vitae magna in lorem ullamcorper aliquam nec ut turpis. Vivamus dignissim neque quis ex
-                        sagittis efficitur. Mauris nisl neque, molestie in consequat sodales, finibus non erat.</p>
-                    <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/services">Learn
-                            More</a></button>
-                </div>
-                <!-- MARKETING 03 -->
-                <div class="marketing__block">
-                    <img class="marketing__image" src="<?php bloginfo('template_directory') ?>/img/service3.jpg">
-                    <div class="marketing__title">
-                        <h6>Markerting</h6>
-                        <img src="<?php bloginfo('template_directory') ?>/img/check.png">
-                    </div>
-                    <p>Cras vitae magna in lorem ullamcorper aliquam nec ut turpis. Vivamus dignissim neque quis ex
-                        sagittis efficitur. Mauris nisl neque, molestie in consequat sodales, finibus non erat.</p>
-                    <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/services">Learn
-                            More</a></button>
-                </div>
-                <!-- MARKETING 04 -->
-                <div class="marketing__block">
-                    <img class="marketing__image" src="<?php bloginfo('template_directory') ?>/img/service4.jpg">
-                    <div class="marketing__title">
-                        <h6>Markerting</h6>
-                        <img src="<?php bloginfo('template_directory') ?>/img/check.png">
-                    </div>
-                    <p>Cras vitae magna in lorem ullamcorper aliquam nec ut turpis. Vivamus dignissim neque quis ex
-                        sagittis efficitur. Mauris nisl neque, molestie in consequat sodales, finibus non erat.</p>
-                    <button data-aos="fade-up" data-aos-duration="2600" class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/services">Learn More</a></button>
-                </div>
+
+
+                <?php endwhile;
+            wp_reset_query();
+            ?>
+
+
+
+
+
+                
             </div>
             <div class="about__text">
                 <h3>My Services</h3>
