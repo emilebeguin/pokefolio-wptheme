@@ -2,20 +2,19 @@
 <footer>
   <div class="col">
     <div class="footer">
-      <div class="footer__logo"><a href="<?php bloginfo('template_directory') ?>/#" class="nav__logo"><img src="<?php bloginfo('template_directory') ?>/img/logosimple-darkbg.png"></a></div>
-      <p>We're a full-stack digital marketing studio based in the center of New York City. From strategy to implementation, we're here to help make your brand shine.</p>
+      <?php dynamic_sidebar( 'footer_1' ); ?>
     </div>
     <div class="footer">
       <div class="footer--title">Quick Links</div>
       <div class="footer--links">
-        <a href="<?php bloginfo('template_directory') ?>/#">Learners</a>
-        <a href="<?php bloginfo('template_directory') ?>/#">Partners</a>
-        <a href="<?php bloginfo('template_directory') ?>/#">Developers</a>
-        <a href="<?php bloginfo('template_directory') ?>/#">Beta Testers</a>
-        <a href="<?php bloginfo('template_directory') ?>/#">Translators</a>
-        <a href="<?php bloginfo('template_directory') ?>/#">Blog</a>
-        <a href="<?php bloginfo('template_directory') ?>/#">Tech Blog</a>
-        <a href="<?php bloginfo('template_directory') ?>/#">Teaching Center</a>
+      <?php wp_nav_menu([
+          'menu' =>  'Footer Menu',
+          'container' => false,
+          'menu_class' =>  'footer__menu',
+          // 'items_wrap' =>  '<ul id="%1$s" class="%2$s nav navbar-nav mr-auto">%3$s</ul>',
+          // 'add_li_class'  => 'nav-item',
+          // 'link_class'   => 'nav-link'
+      ]); ?>
       </div>
     </div>
     <div class="footer">

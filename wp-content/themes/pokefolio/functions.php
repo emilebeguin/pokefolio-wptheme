@@ -86,7 +86,7 @@ function my_wiwi() {
 	) );
 
 	register_sidebar( array(
-		'name'          => 'Footer section 1',
+		'name'          => 'Footer Logo',
 		'id'            => 'footer_1',
 		// 'before_widget' => '<div class="search-widget-area south-catagories-card">',
 		// 'after_widget'  => '</div>',
@@ -95,7 +95,7 @@ function my_wiwi() {
 	) );
 
 	register_sidebar( array(
-		'name'          => 'Footer section 2',
+		'name'          => 'Footer Contact Section',
 		'id'            => 'footer_2',
 		// 'before_widget' => '<div class="search-widget-area south-catagories-card">',
 		// 'after_widget'  => '</div>',
@@ -119,7 +119,8 @@ function register_menus() {
 		array(
 			'header_menu' => __( 'Header Menu' ),
             'services_menu' => __( 'Services Menu' ),
-			'social_menu' => esc_html__('Social Menu', 'textdomain')
+			'social_menu' => esc_html__('Social Menu', 'textdomain'),
+			'footer_menu' => esc_html__('Footer Quick Links', 'textdomain')
 		)
 	);
 }
