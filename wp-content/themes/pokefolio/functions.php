@@ -70,6 +70,61 @@ function pokefolio_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'pokefolio_custom_excerpt_length', 999 );
 
+////////////////////////////// TEST ///////////////////////////////
+
+//Activate custom settings
+// add_action( 'admin_init', 'sunset_custom_settings' );
+// function sunset_custom_settings() {
+// 	//Sidebar Options
+// 	register_setting( 'sunset—settings-group', 'profile_picture' );
+// 	register_setting( 'sunset-settings-group', 'first_name' );
+// 	register_setting( 'sunset—settings—group', '1ast_name' );
+// 	register_setting( 'sunset—settings—group', 'user_description' );
+// 	register_setting( 'sunset-settings—group', 'twitten_hand1er', 'sunset_sanitize_twitter_handler' );
+// 	// register_setting( 'sunset—settings-group', 'facebookmhandler' );
+// 	// register_setting( 'sunset—settings—group', 'gplusmhandler' );
+// 	// add_settings_section( 'sunset—sidebar-options', 'Sidebar Option', 'sunset_sideban_options', 'alecadddnsunset');
+// 	// add_settings_field( 'sidebar-profiIe—picture', 'Profile Picture', 'sunset_sideban_profile', 'alecadddmsunset', 'sunset-sidebar-options');
+// 	// add_settings_field( 'sidebar-name', 'Full Name', 'sunset_sidebar_name', 'alecadddmsunset', 'sunset—sidebar-options');
+// 	// add_settings_field( 'sidebar—description', 'Description', 'sunset_sidebar_description', 'alecadddwsunset', 'sunset-sidebar-options');
+// 	// add_settings_field( 'sidebar—twitter', 'Twitter handler', 'sunset_sidebar_twitter', 'alecadddwsunset', 'sunset—sidebar-options');
+// 	// add_settings_field( 'sidebar—facebook', 'Facebook handler', 'sunsetusidebarmfacebook', 'alecadddmsunset', 'sunset-sidebar-options');
+// 	// add_settings_field( 'sidebar-gplus', 'Google+ handler', 'sunset*sidebarwgp1us', 'alecadddwsunset', 'sunset-sidebar-options');
+// 	// //Theme Support Options
+// 	// // register_setting( 'sunset—theme—support', 'post_formats' );
+// 	// // register_setting( 'sunset—theme—support', 'custom_header' );
+// 	// // register_setting( 'sunset—theme—support', 'custom_background' );
+// 	// add_settings_section( 'sunset-theme-options', 'Theme Options', 'sunset_theme_options', 'alecaddd_sunsetwtheme' );
+// 	// add_settings_field( 'post—formats', 'Post Formats', 'sunset_post_formats', 'alecadddwsunsetmtheme', 'sunset—theme—options' );
+// 	// add_settings_field( 'custom—header', 'Custom Header', 'sunset_custom_header', 'alecadddmsunsetwtheme', 'sunset—theme—options' );
+// 	// add_settings_field( 'custom-background', 'Custom Background', 'sunset_custom_background', 'alecadddmsunsetwtheme', 'sunset—theme—options' );
+
+// 	register_setting('contact-form-options', 'activate');
+// }
+
+function my_admin_menu() {
+	add_options_page (
+		__( 'Sample page', 'my-textdomain' ),
+		__( 'Contact', 'my-textdomain' ),
+		'manage_options',
+		'sample-page',
+		'my_admin_page_contents',
+		'dashicons-schedule',
+		3
+	);
+}
+
+add_action( 'admin_menu', 'my_admin_menu' );
+
+
+function my_admin_page_contents() {
+	?>
+		<h1>
+			<?php esc_html_e( 'Contact information', 'my-plugin-textdomain' ); ?>
+		</h1>
+	<?php
+}
+
 /*******************************************************************
                               WIDGETS
 ********************************************************************/
