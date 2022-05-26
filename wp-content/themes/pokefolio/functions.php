@@ -77,12 +77,30 @@ add_filter( 'excerpt_length', 'pokefolio_custom_excerpt_length', 999 );
 function my_wiwi() {
 
 	register_sidebar( array(
-			'name'          => 'Colonne de droite',
-			// 'id'            => 'right_col',
+			'name'          => 'Right sidebar',
+			'id'            => 'right_sidebar_1',
 			// 'before_widget' => '<div class="search-widget-area south-catagories-card">',
 			// 'after_widget'  => '</div>',
 			'before_title'  => '<h5>',
 			'after_title'   => '</h5>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer section 1',
+		'id'            => 'footer_1',
+		// 'before_widget' => '<div class="search-widget-area south-catagories-card">',
+		// 'after_widget'  => '</div>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer section 2',
+		'id'            => 'footer_2',
+		// 'before_widget' => '<div class="search-widget-area south-catagories-card">',
+		// 'after_widget'  => '</div>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
 	) );
 
 }
