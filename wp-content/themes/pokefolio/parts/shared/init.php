@@ -17,8 +17,9 @@
         if ( is_page('works') ): echo '-works'; endif;
         if ( is_page('about') ): echo '-about'; endif;
     };
-    if ( is_home() )  : echo 'page-home';  // home
-    endif;
+    if ( is_home() )  : echo 'page-home'; endif; // home
+    if ( is_404() ) : echo 'page-404'; endif;    // page 404
+    
     // couleurs du thème
     echo ' ' . get_theme_mod('color_settings', 'theme-color--carapuce_blue');
 
