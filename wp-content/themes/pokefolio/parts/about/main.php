@@ -21,8 +21,7 @@
           <!-- RIGHT PART -->
           <div class="__right about__text --2col">
             <!-- TEXT -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget ante vitae arcu condimentum vehicula efficitur pulvinar orci. Maecenas vitae risus ultrices, vestibulum eros non, varius justo. Nunc convallis, lacus a aliquet consequat, lorem odio placerat augue, sit amet gravida felis enim sit amet tellus. Phasellus varius malesuada justo non iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse ut quam sed metus convallis convallis ut in justo. Vestibulum ut augue rhoncus, mattis odio vel, pharetra nisl.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget ante vitae arcu condimentum vehicula efficitur pulvinar orci. Maecenas vitae risus ultrices, vestibulum eros non, varius justo. Nunc convallis, lacus a aliquet consequat, lorem odio placerat augue, sit amet gravida felis enim sit amet tellus. Phasellus varius malesuada justo non iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse ut quam sed metus convallis convallis ut in justo. Vestibulum ut augue rhoncus, mattis odio vel, pharetra nisl.</p>
+            <?php echo CFS()->get( 'about_presentation', CFS()->options->page( 'Options' ) ); ?>
           </div>
         </div>
         
@@ -31,7 +30,7 @@
           <!-- THE CARD -->
           <div data-aos="fade-up" data-aos-duration="2800" class="__piccontainer about__image">
             <!-- THE IMG -->
-            <img alt="about" src="<?php bloginfo( 'template_directory' ) ?>/img/about-me.jpg" class="--largerimg">
+            <img alt="about" src="<?php echo CFS()->get( 'about_image', CFS()->options->page( 'Options' ) ); ?>" class="--largerimg">
             
           </div>
         </div>

@@ -6,7 +6,7 @@
 
     <!-- HEADER CONTENT -->
     <div class="header">
-        <img class="plongescroll" src="<?php bloginfo('template_directory') ?>/img/screenshot.gif">
+        <img class="plongescroll" src="<?php echo CFS()->get( 'hero_image', CFS()->options->page( 'Options' ) ); ?>">
     </div>
     <div class="white waves animated"></div>
 </header>
