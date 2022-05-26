@@ -6,19 +6,11 @@
     </div>
     <div class="blog__news">
 
-
-
-
-
-
-
-
-    <?php
-        $loop = new WP_Query( array( 
+    <?php $loop = new WP_Query( array( 
             'post_type' => 'post', // Va rechercher le type de contenu “job”
-            'posts_per_page' => -1, // Affiche tout sans limite 
-            'offset' => 0, // Commence la boucle après avoir "passé" les 3 premiers
-            'orderby' => 'date', // Ordonne par le nom de l'élément
+            'posts_per_page' => 3, // Affiche tout sans limite 
+            'offset' => 0, // Commence la boucle au premier
+            'orderby' => 'date', // Ordonne par la date
             'order' => 'ASC', // Chronologique ou pas (DESC)
         ));?>
         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>

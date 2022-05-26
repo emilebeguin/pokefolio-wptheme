@@ -17,7 +17,7 @@
           <i class="fa-solid fa-calendar-days"></i>
         </div>
         <div class="__thedate">
-          10/05/22
+          <?php the_time('d/m/y') ?>
         </div>
       </div>
     </div>

@@ -63,6 +63,13 @@ add_theme_support( 'custom-background', array(
 	'default-repeat' => 'no-repeat',
 ));
 
+
+/* LONGUEUR MAXIMALE DES EXTRAITS */
+function pokefolio_custom_excerpt_length( $length ) {
+    return 12;
+}
+add_filter( 'excerpt_length', 'pokefolio_custom_excerpt_length', 999 );
+
 /*******************************************************************
                               WIDGETS
 ********************************************************************/
