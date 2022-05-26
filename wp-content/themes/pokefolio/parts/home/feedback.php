@@ -9,11 +9,25 @@
     <div class="swiper">
       <!-- swiper wrapper -->
       <div class="swiper-wrapper">
+
+
+
+
+
+      <?php $loop = new WP_Query( array( 
+            'post_type' => 'testimonial', // Va rechercher le type de contenu “job”
+            'posts_per_page' => 4, // Affiche tout sans limite 
+            'offset' => 0, // Commence la boucle après avoir "passé" les 3 premiers
+            'orderby' => 'date', // Ordonne par le nom de l'élément
+            'order' => 'ASC', // Chronologique ou pas (DESC)
+            ));?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
         <!-- FEEDBACK 01 -->
         <div class="swiper-slide">
-          <p>Marketing is both an art and a science, and younic is a master from both sides. Without their help, our marketing campaigns could not have reached the levels we have seen.</p>
+          <p><?php the_content() ?></p>
           <div class="feedback__subtitle">
-            <div>Shiv Krauss, Marketing Director</div>
+            <div><?php the_title(  ) ?></div>
             <div class="feedback__star">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -22,23 +36,18 @@
               <i class="fa-solid fa-star"></i>
             </div>
           </div>
-          <span>Bueno</span>
+          <span><?php echo CFS()->get( 'agency' ); ?></span>
         </div>
-        <!-- FEEDBACK 02 -->
-        <div class="swiper-slide">
-          <p>Marketing is both an art and a science, and younic is a master from both sides. Without their help, our marketing campaigns could not have reached the levels we have seen.</p>
-          <div class="feedback__subtitle">
-            <div>Shiv Krauss, Marketing Director</div>
-            <div class="feedback__star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-          </div>
-          <span>Blabla</span>
-        </div>
+
+<?php endwhile;
+            wp_reset_query();
+            ?>
+
+
+
+
+
+        
       </div>
       <!-- navigation buttons -->
       <div class="button-slider">
