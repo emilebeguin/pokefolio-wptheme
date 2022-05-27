@@ -592,4 +592,12 @@ require_once get_template_directory() . '/activation/built-in-contents.php';
 
 */
 require(get_template_directory() . '/settings/theme_settings.php');
-?>
+
+
+/*******************************************************************
+                           CUSTOM WIDGET
+********************************************************************/
+/*
+
+*/
+require_once('custom-widget.php');
