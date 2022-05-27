@@ -19,6 +19,7 @@
     };
     if ( is_home() )  : echo 'page-home'; endif; // home
     if ( is_404() ) : echo 'page-404'; endif;    // page 404
+    if ( is_archive() ) : echo 'page-archives'; endif;    // page archives
     
     // couleurs du thème
     echo ' ' . get_theme_mod('color_settings', 'theme-color--carapuce_blue');
