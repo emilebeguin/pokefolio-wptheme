@@ -9,56 +9,34 @@
         </div>
         <div data-aos="fade-up" data-aos-duration="2600" class="blog__news">
             <!-- BLOG 01 -->
-            <div class="blog__block">
-                <div class="blog__image">
-                    <img src="img/news1.jpeg">
-                    <div class="blog__date">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div>10/05/2022</div>
+            <?php $loop = new WP_Query( array( 
+                'post_type' => 'post', // Va rechercher le type de contenu “job”
+                'posts_per_page' => 3, // Affiche tout sans limite 
+                'offset' => 0, // Commence la boucle au premier
+                'orderby' => 'date', // Ordonne par la date
+                'order' => 'ASC', // Chronologique ou pas (DESC)
+            ));?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+            
+                <div class="blog__block">
+                    <div class="blog__image">
+                        <img src="<?php the_post_thumbnail_url() ?>">
+                        <div class="blog__date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <div><?php the_time('d/m/Y') ?></div>
+                        </div>
+                    </div>
+                    <div class="blog__text">
+                        <h6><?php the_title() ?></h6>
+                        <?php the_excerpt() ?>
+                        <button class="button button--darkblue"><a href="<?php the_permalink() ?>">Read More</a></button>
                     </div>
                 </div>
-                <div class="blog__text">
-                    <h6>Title</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper nibh sed tellus consectetur
-                        mattis
-                    </p>
-                    <button class="button button--darkblue"><a href="#">Learn More</a></button>
-                </div>
-            </div>
-            <!-- BLOG 02 -->
-            <div class="blog__block">
-                <div class="blog__image">
-                    <img src="img/news2.jpg">
-                    <div class="blog__date">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div>10/05/2022</div>
-                    </div>
-                </div>
-                <div class="blog__text">
-                    <h6>Title</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper nibh sed tellus consectetur
-                        mattis
-                    </p>
-                    <button class="button button--darkblue"><a href="#">Learn More</a></button>
-                </div>
-            </div>
-            <!-- BLOG 03 -->
-            <div class="blog__block">
-                <div class="blog__image">
-                    <img src="img/news3.jpeg">
-                    <div class="blog__date">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div>10/05/2022</div>
-                    </div>
-                </div>
-                <div class="blog__text">
-                    <h6>Title</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper nibh sed tellus consectetur
-                        mattis
-                    </p>
-                    <button class="button button--darkblue"><a href="#">Learn More</a></button>
-                </div>
-            </div>
+                
+            <?php endwhile;
+            wp_reset_query();
+            ?>
+
         </div>
     </div>
 </section>

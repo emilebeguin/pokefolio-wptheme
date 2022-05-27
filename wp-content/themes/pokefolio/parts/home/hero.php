@@ -1,5 +1,5 @@
 <!-- HEADER HERE -->
-<header class="bg --darkbg custom-background">
+<header class="bg --darkbg">
 
     <!-- NAVIGATION -->
     <?php get_template_part('parts/shared/topnav')?>
