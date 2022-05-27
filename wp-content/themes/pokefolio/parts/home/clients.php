@@ -13,22 +13,18 @@
                 <div class="swiper-wrapper">
 
 
-                    <?php $loop = new WP_Query( array(
-                        'post_type' => 'client', // fetch all content type client
-                        // il faudra sans doute créer des contenus de type client...
-                        'order' => 'DESC',
-                    ));?>
-                    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                    <div class="swiper-slide">
+                <?php 
+                    $fields = CFS()->get( 'clients', CFS()->options->page( 'Options' ) );
+                    foreach ( $fields as $field ):
+                        
+                ?>
 
                         <!-- LOGO -->
                         <div class="clients__logos">
-                            <img src="<?php bloginfo('template_directory') ?>/img/client-jm.jpg">
+                            <img src="<?php echo $field['logo']; ?>">
                         </div>
 
-                    </div>
-                    <?php endwhile;
-                    wp_reset_query(); ?>
+                        <?php endforeach; ?>
 
                 </div>
             </div>
