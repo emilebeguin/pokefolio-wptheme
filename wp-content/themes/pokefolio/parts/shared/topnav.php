@@ -1,5 +1,5 @@
 <nav class="nav --airbg">
-    <a href="<?php bloginfo('template_directory') ?>" class="nav__logo">
+    <a href="<?php echo home_url() ?>" class="nav__logo">
         <img src="<?php bloginfo('template_directory') ?>/img/logosimple-lightbg.png">
     </a>
     <?php wp_nav_menu([

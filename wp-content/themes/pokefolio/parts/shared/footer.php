@@ -18,6 +18,7 @@
       </div>
     </div>
     <div class="footer">
+      <div class="footer--title">Contact information</div>
       <?php dynamic_sidebar( 'footer_2' ); ?>
     </div>
     <div class="footer">

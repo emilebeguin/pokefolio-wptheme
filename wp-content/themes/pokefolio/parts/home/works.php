@@ -17,7 +17,7 @@
             'posts_per_page' => 4, // Affiche tout sans limite 
             'offset' => 0, // Commence la boucle après avoir "passé" les 3 premiers
             'orderby' => 'date', // Ordonne par le nom de l'élément
-            'order' => 'ASC', // Chronologique ou pas (DESC)
+            'order' => 'DESC', // Chronologique ou pas (DESC)
             ));?>
             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
