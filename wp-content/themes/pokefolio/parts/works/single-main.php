@@ -12,27 +12,32 @@
             <div class="block-info">
               <p>Client</p>
               <div class="exp__tag">
-                <div class="tag"><a href="#">Luminous Agency</a></div>
+                <div class="tag"><a href="#"><?php echo CFS()->get( 'client' ); ?></a></div>
               </div>
               <p>Services</p>
               <div class="exp__tag">
-                <div data-aos="fade-down-left" data-aos-duration="2200" class="tag"><a href="#">Marketing</a></div>
-                <div data-aos="fade-down-left" data-aos-duration="2200" class="tag"><a href="#">DSLR</a></div>
-                <div data-aos="fade-down-left" data-aos-duration="2200" class="tag"><a href="#">Creative photography</a>
-                </div>
+
+                <?php 
+                    $fields = CFS()->get( 'services' );
+                    foreach ( $fields as $field ):
+                        
+                ?>
+
+
+                <div data-aos="fade-down-left" data-aos-duration="2200" class="tag"><a href="#"><?php echo $field['service']; ?></a></div>
+
+                <?php endforeach; ?>
+
+        
+              
               </div>
               <p>Year</p>
               <div class="exp__tag">
-                <div data-aos="fade-down-left" data-aos-duration="2200" class="tag"><a href="#">2019</a></div>
+                <div data-aos="fade-down-left" data-aos-duration="2200" class="tag"><a href="#"><?php echo CFS()->get( 'year' ); ?></a></div>
               </div>
             </div>
             <div class="block-txt">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam possimus commodi iste voluptates
-                eligendi maxime accusantium, doloribus iure mollitia eum, incidunt quis ipsa minus illo vero fugiat
-                neque, aut quibusdam.</p>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam possimus commodi iste voluptates
-                eligendi maxime accusantium, doloribus iure mollitia eum, incidunt quis ipsa minus illo vero fugiat
-                neque, aut quibusdam.</p>
+            <?php echo CFS()->get( 'summary' ); ?>
             </div>
           </div>
         </div>
