@@ -1,4 +1,3 @@
-
 <?php
     $loop = new WP_Query( array(
         'post_type' => 'service', // Va rechercher le type de contenu service
@@ -15,47 +14,17 @@
             else{ echo 'creative section-odd';}
         ?>">
             <div class="wrapper">
-
                 <div class="block-txtimg">
                     <div class="block-txtimg__image">
-                        <img alt="Grow and Stand Out" src="img/service1.jpeg">
+                        <img alt="<?php the_post_thumbnail_caption() ?>" src="<?php the_post_thumbnail_url() ?>">
                     </div>
                     <div data-aos="zoom-out-right" data-aos-duration="2600" class="block-txtimg__text">
                         <div class="heading">
                             <h3>My Services</h3>
-                            <h1>Marketing</h1>
+                            <h1><?php the_title() ?></h1>
                         </div>
                         <div class="clmn-2">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
-                                illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
-                                blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam
-                                liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim
-                                placerat facer possim assum.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
-                                illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
-                                blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam
-                                liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim
-                                placerat facer possim assum.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
-                                illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
-                                blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam
-                                liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim
-                                placerat facer possim assum.
-                            </p>
+                            <?php the_content() ?>
                         </div>
                     </div>
                 </div>

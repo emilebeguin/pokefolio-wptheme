@@ -4,7 +4,7 @@
     get_template_part('parts/shared/init');
     get_template_part('parts/shared/topnav');
     get_template_part('parts/services/intro');
-    get_template_part('parts/services/services-list');
+    get_template_part('parts/services/service-list');
     get_template_part('parts/shared/talk');
     get_template_part('parts/shared/footer');
 ?>
