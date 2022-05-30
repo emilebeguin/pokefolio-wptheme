@@ -13,6 +13,7 @@
             <?php $loop = new WP_Query( array(
                 'post_type' => 'post', // fetch all content type post
                 'order' => 'DESC',
+                'posts_per_page' => 3,
             ));?>
             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 

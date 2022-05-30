@@ -18,21 +18,8 @@
       </div>
     </div>
     <div class="footer">
-      <div class="footer--title">Contact Info</div>
-      <div class="footer--info">
-        <div class="info">
-          <i class="fa-solid fa-location-dot"></i>
-          <div>1500 treat Avb, Suite 200 San Francisco, CA 9400</div>
-        </div>
-        <div class="info">
-          <i class="fa-solid fa-envelope"></i>
-          <div>pokefolio@yopmail.com</div>
-        </div>
-        <div class="info">
-          <i class="fa-solid fa-phone"></i>
-          <div>1-800-800-2299 (Support)</div>
-        </div>
-      </div>
+      <div class="footer--title">Contact information</div>
+      <?php dynamic_sidebar( 'footer_2' ); ?>
     </div>
     <div class="footer">
       <div class="footer--title">Join my newsletter</div>

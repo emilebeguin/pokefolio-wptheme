@@ -7,25 +7,22 @@
             <h1>Just a few of my clients</h1>
         </div>
         <div class="clients__block">
-
             <div class="swiper-container">
                 <!-- swiper wrapper -->
                 <div class="swiper-wrapper">
-
-
-                <?php 
-                    $fields = CFS()->get( 'clients', CFS()->options->page( 'Options' ) );
-                    foreach ( $fields as $field ):
-                        
-                ?>
+                    <?php 
+                        $fields = CFS()->get( 'clients', CFS()->options->page( 'Options' ) );
+                        foreach ( $fields as $field ):
+                    ?>
 
                         <!-- LOGO -->
-                        <div class="clients__logos">
-                            <img src="<?php echo $field['logo']; ?>">
+                            <div class="swiper-slide">
+                            <div class="clients__logos">
+                                <img src="<?php echo $field['logo']; ?>" alt="logo">
+                            </div>
                         </div>
 
-                        <?php endforeach; ?>
-
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
