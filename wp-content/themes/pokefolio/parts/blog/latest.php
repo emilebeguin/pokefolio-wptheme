@@ -19,7 +19,7 @@
         <!-- Ce qui doit être "bouclé" -->
 
         <div class="blog__block <?php if($is_first){ echo 'block__full';}?>">
-            <div class="blog__image">
+            <div class="blog__image" onclick="location.href='<?php the_permalink() ?>';" style="cursor: pointer;">
                 <img src="<?php the_post_thumbnail_url() ?>">
             </div>
             <div class="blog__text <?php if($is_first){ echo '--textfull'; }?>">
@@ -29,7 +29,7 @@
                 if($is_first): ?>
                 <div class="read-more"><a href="<?php the_permalink() ?>">Read More</a></div>
                 <?php else: ?>
-                <button class="button button--darkblue"><a href="<?php the_permalink(  ) ?>">Read More</a></button>
+                <button class="button button--darkblue"><a href="<?php the_permalink() ?>">Read More</a></button>
                 <?php endif;?>
             </div>
         </div>

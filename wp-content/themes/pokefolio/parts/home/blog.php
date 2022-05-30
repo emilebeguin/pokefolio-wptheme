@@ -20,7 +20,7 @@
 
                 <!-- BLOG POST -->
                 <div class="blog__block <?php id ?>">
-                    <div class="blog__image">
+                    <div class="blog__image" onclick="location.href='<?php the_permalink() ?>';" style="cursor: pointer;">
                         <img src="<?php the_post_thumbnail_url() ?>">
                         <div class="blog__date">
                             <i class="fa-solid fa-calendar-days"></i>
