@@ -1,4 +1,4 @@
-<div class="work">
+<section class="work --darkbg">
     <div class="wrapper">
         <div class="heading heading--white">
             <h3>Get Inspired</h3>
@@ -7,40 +7,42 @@
             <p>Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut Enim ad minim.</p>
         </div>
-        <div class="work__image">
+        <div data-aos="fade-up" data-aos-duration="2800" class="work__image">
+
+
+
+
+        <?php $loop = new WP_Query( array( 
+            'post_type' => 'work', // Va rechercher le type de contenu “job”
+            'posts_per_page' => 4, // Affiche tout sans limite 
+            'offset' => 0, // Commence la boucle après avoir "passé" les 3 premiers
+            'orderby' => 'date', // Ordonne par le nom de l'élément
+            'order' => 'DESC', // Chronologique ou pas (DESC)
+            ));?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+
             <!-- WORK SINGLE 01 -->
             <div class="work__single">
+            <a href="<?php the_permalink( ); ?>">
                 <div class="singlework__text">
-                    <h1>Project 1</h1>
-                    <p>Ut semper nibh sed tellus consectetur mattis</p>
+                    <h1><?php the_title( ); ?></h1>
+                    <p><?php the_excerpt( ); ?></p>
                 </div>
-                <img src="<?php bloginfo('template_directory') ?>/img/work1.jpeg">
+                <img src="<?php the_post_thumbnail_url( ); ?>">
+                </a>
             </div>
-            <!-- WORK SINGLE 02 -->
-            <div class="work__single">
-                <div class="singlework__text">
-                    <h1>Project 2</h1>
-                    <p>Ut semper nibh sed tellus consectetur mattis</p>
-                </div>
-                <img src="<?php bloginfo('template_directory') ?>/img/work2.jpeg">
-            </div>
-            <!-- WORK SINGLE 03 -->
-            <div class="work__single">
-                <div class="singlework__text">
-                    <h1>Project 3</h1>
-                    <p>Ut semper nibh sed tellus consectetur mattis</p>
-                </div>
-                <img src="<?php bloginfo('template_directory') ?>/img/work3.jpeg">
-            </div>
-            <!-- WORK SINGLE 04 -->
-            <div class="work__single">
-                <div class="singlework__text">
-                    <h1>Project 4</h1>
-                    <p>Ut semper nibh sed tellus consectetur mattis</p>
-                </div>
-                <img src="<?php bloginfo('template_directory') ?>/img/work4.jpeg">
-            </div>
+
+            <?php endwhile;
+            wp_reset_query();
+            ?>
+
+
+
+
+
+            
         </div>
-        <button class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/#">Learn More</a></button>
+        <button data-aos="fade-up" data-aos-duration="2600" class="button button--blue"><a href="<?php bloginfo('template_directory') ?>/#">Learn More</a></button>
     </div>
-</div>
+</section>

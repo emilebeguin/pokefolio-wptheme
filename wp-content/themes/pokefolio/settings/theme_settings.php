@@ -6,7 +6,7 @@ add_action('customize_register', function($customizer){
         'theme_color',
         array(
             'title' => 'Couleurs Pokefolio',
-            'description' => '',
+            'description' => 'Changez vous-même la couleur du thème !',
         )
     );
     $customizer->add_setting(
@@ -29,3 +29,16 @@ add_action('customize_register', function($customizer){
         )
     );
 });
+
+// ne fonctionne pas avec la classe plongescroll
+// add_action( 'after_setup_theme', function() {
+//     $args = array(
+//         'default-image'      => get_template_directory_uri() . '/img/work1.jpeg',
+//         'default-text-color' => '000',
+//         'width'              => 1110,
+//         'height'             => 750,
+//         'flex-width'         => true,
+//         'flex-height'        => true,
+//     );
+//     add_theme_support( 'custom-header', $args );
+// });

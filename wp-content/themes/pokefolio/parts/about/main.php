@@ -1,0 +1,194 @@
+<!-- MAIN -->
+<main>
+    
+    
+    
+    <!-- TOP OF THE PAGE -->
+    <section class="toptop --airbg --overflow">
+      <div class="top wrapper ">
+        
+        <div class="__txts --respmargin">
+          <!-- LEFT PART -->
+          <div class="__left --2col">
+            <!-- TITLE -->
+            <h3>About Me</h3>
+            <!-- NAME -->
+            <h2 data-aos="fade-up" data-aos-duration="2000" class="--bigtitle">
+              <?php echo CFS()->get( 'introduction_phrase' ); ?>
+            </h2>
+          </div>
+          
+          <!-- RIGHT PART -->
+          <div class="__right about__text --2col">
+            <!-- TEXT -->
+            <?php echo CFS()->get( 'about_presentation', CFS()->options->page( 'Options' ) ); ?>
+          </div>
+        </div>
+        
+        <!-- PICTURE -->
+        <div class="__pic --toppad --respmargin">
+          <!-- THE CARD -->
+          <div data-aos="fade-up" data-aos-duration="2800" class="__piccontainer about__image">
+            <!-- THE IMG -->
+            <img alt="about" src="<?php echo CFS()->get( 'about_image', CFS()->options->page( 'Options' ) ); ?>" class="--largerimg">
+            
+          </div>
+        </div>
+        <!-- END OF PICTURE -->
+        
+      </div>
+    </section>
+    
+    <!-- END OF TOP -->
+    
+    
+    <!-- CARDS SECTION -->
+    <section class="cards --waterbg">
+      <!-- TITLES -->
+      <div class="__titles wrapper --toppad">
+        <!-- PRE TITLE -->
+        <h3 class="--respmargin">My difference</h3>
+        <!-- TITLE -->
+        <h2 class="--bigtitle --respmargin">Here are the codes I live by</h2>
+      </div>
+      
+      
+      <!-- CARDS -->
+      <div class="__cards --toppad  --botpad wrapper">
+        
+        <!-- SINGLE CARD (x6) -->
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
+          <!-- ICON -->
+          <div class="__icon --lilpadtop">
+            <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
+          </div>
+          
+          <!-- TITLE -->
+          <div class="__title">
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_1' ); ?></h5>
+          </div>
+          
+          <!-- TEXT -->
+          <div class="__text --lilpadbot">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aliquam. Enim sequi nemo voluptatibus asperiores numquam inventore ad nostrum quos natus ut.</p>
+          </div>
+        </div>
+        <!-- END OF SINGLE CARD -->
+        
+        <!-- SINGLE CARD (x6) -->
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
+          <!-- ICON -->
+          <div class="__icon --lilpadtop">
+            <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
+          </div>
+          
+          <!-- TITLE -->
+          <div class="__title">
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_2' ); ?></h5>
+          </div>
+          
+          <!-- TEXT -->
+          <div class="__text --lilpadbot">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aliquam. Enim sequi nemo voluptatibus asperiores numquam inventore ad nostrum quos natus ut.</p>
+          </div>
+        </div>
+        <!-- END OF SINGLE CARD -->
+        
+        <!-- SINGLE CARD (x6) -->
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
+          <!-- ICON -->
+          <div class="__icon --lilpadtop">
+            <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
+          </div>
+          
+          <!-- TITLE -->
+          <div class="__title">
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_3' ); ?></h5>
+          </div>
+          
+          <!-- TEXT -->
+          <div class="__text --lilpadbot">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aliquam. Enim sequi nemo voluptatibus asperiores numquam inventore ad nostrum quos natus ut.</p>
+          </div>
+        </div>
+        <!-- END OF SINGLE CARD -->
+        
+        <!-- SINGLE CARD (x6) -->
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
+          <!-- ICON -->
+          <div class="__icon --lilpadtop">
+            <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
+          </div>
+          
+          <!-- TITLE -->
+          <div class="__title">
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_4' ); ?></h5>
+          </div>
+          
+          <!-- TEXT -->
+          <div class="__text --lilpadbot">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aliquam. Enim sequi nemo voluptatibus asperiores numquam inventore ad nostrum quos natus ut.</p>
+          </div>
+        </div>
+        <!-- END OF SINGLE CARD -->
+        
+        <!-- SINGLE CARD (x6) -->
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
+          <!-- ICON -->
+          <div class="__icon --lilpadtop">
+            <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
+          </div>
+          
+          <!-- TITLE -->
+          <div class="__title">
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_5' ); ?></h5>
+          </div>
+          
+          <!-- TEXT -->
+          <div class="__text --lilpadbot">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aliquam. Enim sequi nemo voluptatibus asperiores numquam inventore ad nostrum quos natus ut.</p>
+          </div>
+        </div>
+        <!-- END OF SINGLE CARD -->
+        
+        <!-- SINGLE CARD (x6) -->
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="__singlecard">
+          <!-- ICON -->
+          <div class="__icon --lilpadtop">
+            <img src="<?php bloginfo( 'template_directory' ) ?>/img/tags-icon.svg" alt="tag">
+          </div>
+          
+          <!-- TITLE -->
+          <div class="__title">
+            <h5 class="--centralizer"><?php echo CFS()->get( 'quality_6' ); ?></h5>
+          </div>
+          
+          <!-- TEXT -->
+          <div class="__text --lilpadbot">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aliquam. Enim sequi nemo voluptatibus asperiores numquam inventore ad nostrum quos natus ut.</p>
+          </div>
+        </div>
+        <!-- END OF SINGLE CARD -->
+      </div>
+    </section>
+    <!-- END OF CARDS -->
+    
+    
+    <!-- CTA SECTION -->
+    <section class="--darkbg bg">
+      <div class="talk --bgreplacer">
+        <div class="overlay --overlayfix">
+          <div class="heading heading--white">
+            <h3>Let's work together</h3>
+            <div class="border__bottom"></div>
+            <h1>Take your business to new heights</h1>
+            <p>Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut Enim ad minim. Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut Enim ad minim.</p>
+            <button data-aos="fade-up" data-aos-duration="2600" class="button button--pink"><a href="<?php bloginfo( 'url' ) ?>/contact">Contact me</a></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END OF CTA -->
+    
+  </main>
+  <!-- END OF MAIN -->

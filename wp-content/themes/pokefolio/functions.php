@@ -55,6 +55,128 @@ add_filter( 'cfs_options_pages', 'my_custom_options_pages' );
 	  }
   }
 
+/* FOND PERSONNALISABLE DE LA SECTION HERO */
+add_theme_support( 'custom-background', array(
+	'default-color' => '0000ff',
+	'default-size' => 'cover',
+	'default-image' => get_template_directory_uri() . '/img/bg-home.png',
+	'default-repeat' => 'no-repeat',
+));
+
+
+/* LONGUEUR MAXIMALE DES EXTRAITS */
+function pokefolio_custom_excerpt_length( $length ) {
+    return 12;
+}
+add_filter( 'excerpt_length', 'pokefolio_custom_excerpt_length', 999 );
+
+////////////////////////////// TEST ///////////////////////////////
+
+//Activate custom settings
+// add_action( 'admin_init', 'sunset_custom_settings' );
+// function sunset_custom_settings() {
+// 	//Sidebar Options
+// 	register_setting( 'sunset—settings-group', 'profile_picture' );
+// 	register_setting( 'sunset-settings-group', 'first_name' );
+// 	register_setting( 'sunset—settings—group', '1ast_name' );
+// 	register_setting( 'sunset—settings—group', 'user_description' );
+// 	register_setting( 'sunset-settings—group', 'twitten_hand1er', 'sunset_sanitize_twitter_handler' );
+// 	// register_setting( 'sunset—settings-group', 'facebookmhandler' );
+// 	// register_setting( 'sunset—settings—group', 'gplusmhandler' );
+// 	// add_settings_section( 'sunset—sidebar-options', 'Sidebar Option', 'sunset_sideban_options', 'alecadddnsunset');
+// 	// add_settings_field( 'sidebar-profiIe—picture', 'Profile Picture', 'sunset_sideban_profile', 'alecadddmsunset', 'sunset-sidebar-options');
+// 	// add_settings_field( 'sidebar-name', 'Full Name', 'sunset_sidebar_name', 'alecadddmsunset', 'sunset—sidebar-options');
+// 	// add_settings_field( 'sidebar—description', 'Description', 'sunset_sidebar_description', 'alecadddwsunset', 'sunset-sidebar-options');
+// 	// add_settings_field( 'sidebar—twitter', 'Twitter handler', 'sunset_sidebar_twitter', 'alecadddwsunset', 'sunset—sidebar-options');
+// 	// add_settings_field( 'sidebar—facebook', 'Facebook handler', 'sunsetusidebarmfacebook', 'alecadddmsunset', 'sunset-sidebar-options');
+// 	// add_settings_field( 'sidebar-gplus', 'Google+ handler', 'sunset*sidebarwgp1us', 'alecadddwsunset', 'sunset-sidebar-options');
+// 	// //Theme Support Options
+// 	// // register_setting( 'sunset—theme—support', 'post_formats' );
+// 	// // register_setting( 'sunset—theme—support', 'custom_header' );
+// 	// // register_setting( 'sunset—theme—support', 'custom_background' );
+// 	// add_settings_section( 'sunset-theme-options', 'Theme Options', 'sunset_theme_options', 'alecaddd_sunsetwtheme' );
+// 	// add_settings_field( 'post—formats', 'Post Formats', 'sunset_post_formats', 'alecadddwsunsetmtheme', 'sunset—theme—options' );
+// 	// add_settings_field( 'custom—header', 'Custom Header', 'sunset_custom_header', 'alecadddmsunsetwtheme', 'sunset—theme—options' );
+// 	// add_settings_field( 'custom-background', 'Custom Background', 'sunset_custom_background', 'alecadddmsunsetwtheme', 'sunset—theme—options' );
+
+// 	register_setting('contact-form-options', 'activate');
+// }
+
+function my_admin_menu() {
+	add_options_page (
+		__( 'Sample page', 'my-textdomain' ),
+		__( 'Contact', 'my-textdomain' ),
+		'manage_options',
+		'sample-page',
+		'my_admin_page_contents',
+		'dashicons-schedule',
+		3
+	);
+}
+
+add_action( 'admin_menu', 'my_admin_menu' );
+
+
+function my_admin_page_contents() {
+	?>
+		<h1>
+			<?php esc_html_e( 'Contact information', 'my-plugin-textdomain' ); ?>
+		</h1>
+	<?php
+}
+
+// retirer le nom du type de contenu dans les archives
+add_filter('get_the_archive_title', function ($title) {
+    if (is_category()) {
+        $title = single_cat_title('', false);
+    } elseif (is_tag()) {
+        $title = single_tag_title('', false);
+    } elseif (is_author()) {
+        $title = '<span class="vcard">' . get_the_author() . '</span>';
+    } elseif (is_tax()) { //for custom post types
+        $title = sprintf(__('%1$s'), single_term_title('', false));
+    } elseif (is_post_type_archive()) {
+        $title = post_type_archive_title('', false);
+    }
+    return $title;
+});
+
+// pour avoir des extraits formatés plus grands que the_excerpt
+function wp_trim_words_retain_formatting( $text, $num_words = 55, $more = null ) {
+	if ( null === $more )
+		$more = __( '&hellip;' );
+	$original_text = $text;
+	/* translators: If your word count is based on single characters (East Asian characters),
+	enter 'characters'. Otherwise, enter 'words'. Do not translate into your own language. */
+	if ( 'characters' == _x( 'words', 'word count: words or characters?' ) && preg_match( '/^utf\-?8$/i', get_option( 'blog_charset' ) ) ) {
+		$text = trim( preg_replace( "/[\n\r\t ]+/", ' ', $text ), ' ' );
+		preg_match_all( '/./u', $text, $words_array );
+		$words_array = array_slice( $words_array[0], 0, $num_words + 1 );
+		$sep = '';
+	} else {
+		$words_array = preg_split( "/[\n\r\t ]+/", $text, $num_words + 1, PREG_SPLIT_NO_EMPTY );
+		$sep = ' ';
+	}
+	if ( count( $words_array ) > $num_words ) {
+		array_pop( $words_array );
+		$text = implode( $sep, $words_array );
+		$text = $text . $more;
+	} else {
+		$text = implode( $sep, $words_array );
+	}
+	/**
+	 * Filter the text content after words have been trimmed.
+	 *
+	 * @since 3.3.0
+	 *
+	 * @param string $text          The trimmed text.
+	 * @param int    $num_words     The number of words to trim the text to. Default 5.
+	 * @param string $more          An optional string to append to the end of the trimmed text, e.g. &hellip;.
+	 * @param string $original_text The text before it was trimmed.
+	 */
+	return apply_filters( 'wp_trim_words', $text, $num_words, $more, $original_text );
+}
+
 /*******************************************************************
                               WIDGETS
 ********************************************************************/
@@ -62,12 +184,30 @@ add_filter( 'cfs_options_pages', 'my_custom_options_pages' );
 function my_wiwi() {
 
 	register_sidebar( array(
-			'name'          => 'Colonne de droite',
-			// 'id'            => 'right_col',
+			'name'          => 'Right sidebar',
+			'id'            => 'right_sidebar_1',
 			// 'before_widget' => '<div class="search-widget-area south-catagories-card">',
 			// 'after_widget'  => '</div>',
 			'before_title'  => '<h5>',
 			'after_title'   => '</h5>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Logo',
+		'id'            => 'footer_1',
+		// 'before_widget' => '<div class="search-widget-area south-catagories-card">',
+		// 'after_widget'  => '</div>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer Contact Section',
+		'id'            => 'footer_2',
+		// 'before_widget' => '<div class="search-widget-area south-catagories-card">',
+		// 'after_widget'  => '</div>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
 	) );
 
 }
@@ -86,7 +226,8 @@ function register_menus() {
 		array(
 			'header_menu' => __( 'Header Menu' ),
             'services_menu' => __( 'Services Menu' ),
-			'social_menu' => esc_html__('Social Menu', 'textdomain')
+			'social_menu' => esc_html__('Social Menu', 'textdomain'),
+			'footer_menu' => esc_html__('Footer Quick Links', 'textdomain')
 		)
 	);
 }
@@ -451,4 +592,12 @@ require_once get_template_directory() . '/activation/built-in-contents.php';
 
 */
 require(get_template_directory() . '/settings/theme_settings.php');
-?>
+
+
+/*******************************************************************
+                           CUSTOM WIDGET
+********************************************************************/
+/*
+
+*/
+require_once('custom-widget.php');

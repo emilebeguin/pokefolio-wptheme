@@ -11,5 +11,5 @@
   get_template_part('parts/home/clients');
   get_template_part('parts/shared/talk');
   get_template_part('parts/home/blog');
-  get_template_part('parts/footer')
+  get_template_part('parts/shared/footer')
 ?>

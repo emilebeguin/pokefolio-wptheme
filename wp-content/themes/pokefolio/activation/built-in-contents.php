@@ -62,4 +62,34 @@ function create_page_about() {
 }
 add_action('wp_loaded', 'create_page_about', 0);
 
+// PAGE WORKS
+function create_page_works() {
+	if ( get_page_by_title( 'about' ) == null ) {
+		$wordpress_page = array(
+			'post_title'    => 'Works',
+			'post_content'  => 'Ceci est un peu de contenu pour la page Works',
+			'post_status'   => 'draft', // brouillon d'abord
+			'post_author'   => 1, // admin
+			'post_type' => 'page'
+		);
+		wp_insert_post( $wordpress_page );
+	}
+}
+add_action('wp_loaded', 'create_page_works', 0);
+
+// PAGE BLOG
+function create_page_blog() {
+	if ( get_page_by_title( 'about' ) == null ) {
+		$wordpress_page = array(
+			'post_title'    => 'Blog',
+			'post_content'  => 'Ceci est un peu de contenu pour la page Blog',
+			'post_status'   => 'draft', // brouillon d'abord
+			'post_author'   => 1, // admin
+			'post_type' => 'page'
+		);
+		wp_insert_post( $wordpress_page );
+	}
+}
+add_action('wp_loaded', 'create_page_blog', 0);
+
 ?>
