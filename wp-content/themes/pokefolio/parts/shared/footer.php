@@ -30,7 +30,7 @@
             <input type="text" name="subscribe-mail" id="subscribe-mail" placeholder="tiffany.milan@email.com">
           </div>
         </div>
-        <button data-aos="fade-up" data-aos-duration="2600" class="button button--pink"><a href="#">Subscribe</a></button>
+        <button data-aos="fade-up" data-aos-duration="2600" class="button button--pink"><a href="<?php bloginfo('url') ?>/contact">Subscribe</a></button>
       </form>
     </div>    
   </div>

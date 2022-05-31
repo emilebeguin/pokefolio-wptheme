@@ -10,21 +10,22 @@
         </div>
         <div data-aos="fade-up" data-aos-duration="2600" class="blog__news">
 
-            <?php $loop = new WP_Query( array(
+            <?php $is_first = true;
+            $loop = new WP_Query( array(
                 'post_type' => 'post', // fetch all content type post
                 'order' => 'DESC',
                 'posts_per_page' => 3,
             ));?>
             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-                <!-- BLOG 01 -->
-                <div class="blog__block">
-                    <div class="blog__image">
+                <!-- BLOG POST -->
+                <div class="blog__block <?php id ?>">
+                    <div class="blog__image" onclick="location.href='<?php the_permalink() ?>';" style="cursor: pointer;">
                         <img src="<?php the_post_thumbnail_url() ?>">
                         <div class="blog__date">
                             <i class="fa-solid fa-calendar-days"></i>
                             <!-- A DYNAMISER -->
-                            <div>10/05/2022</div>
+                            <div><?php the_time('d/m/y'); ?></div>
                         </div>
                     </div>
                     <div class="blog__text">

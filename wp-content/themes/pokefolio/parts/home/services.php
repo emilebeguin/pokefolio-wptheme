@@ -5,10 +5,6 @@
             <!-- PALIER ANIMATION 2600 -->
             <div data-aos="fade-up" data-aos-duration="2600" class="services__marketing">
 
-
-
-
-
             <?php $loop = new WP_Query( array( 
             'post_type' => 'service', // Va rechercher le type de contenu “job”
             'posts_per_page' => 4, // Affiche tout sans limite 

@@ -8,7 +8,7 @@
                 <p>Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut Enim ad minim. Lorem impsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut Enim ad minim.</p>
-                <button data-aos="fade-up" data-aos-duration="2600" class="button button--pink"><a href="<?php bloginfo('template_directory') ?>/#">Learn More</a></button>
+                <button data-aos="fade-up" data-aos-duration="2600" class="button button--pink"><a href="<?php bloginfo('url') ?>/contact">Contact me</a></button>
             </div>
         </div>
     </div>
